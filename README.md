@@ -10,7 +10,7 @@ Detalles en [Pycom][Pycom]
 
 2. Actualizar el firmware de la placa. Desde windows se debe tener el driver conectado al puerto COM e instalar [este software](https://software.pycom.io/findupgrade?product=pycom-firmware-updater&type=all&platform=win32&redirect=true). Desde Ubuntu se debe instalar [estos componentes](https://software.pycom.io/downloads/linux-1.15.1.html) y seguir las instrucciones de [esta página](https://docs.pycom.io/gettingstarted/installation/firmwaretool.html#second).
 
->Nota: Al finalizar este procedimiento se deben capturar el Sigfox Id y PAD
+>Nota: Al finalizar este procedimiento se deben capturar el Sigfox Id y PAC
 
 > IMPORTANTE: Es necesario tener conectada la antena externa para evitar quemar el dispositivo
 
@@ -24,4 +24,10 @@ Detalles en [Pycom][Pycom]
 
 > When operating in RCZ2 and RCZ4 the module can only send messages on the default macro-channel (this is due to Sigfox network limitations)
 
-> La documentación de la librería de Sigfox se encuentra en la (documentación)[https://docs.pycom.io/firmwareapi/pycom/network/sigfox.html]
+> La documentación de la librería de Sigfox se encuentra en la [documentación](https://docs.pycom.io/firmwareapi/pycom/network/sigfox.html)
+
+En la [página de back-end](https://buy.sigfox.com/activate) de Sigfox se debe registrar el dispositivo (Pycom ofrece un suscripción incluida durante un año con Sigfox)
+
+[Para crear Callbacks](https://support.sigfox.com/docs/custom-callback-creation)
+
+Al [ingresar](https://backend.sigfox.com/auth/login) en la cuenta creada en la pestaña "DEVICE" debe aparecer el dispositivo en cuestión.
