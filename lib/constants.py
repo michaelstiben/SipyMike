@@ -1,3 +1,18 @@
+# BME680 General config
+POLL_PERIOD_MS = 10
+
+# BME680 I2C addresses
+I2C_ADDR_PRIMARY = 0x76
+I2C_ADDR_SECONDARY = 0x77
+
+# BME680 unique chip identifier
+CHIP_ID = 0x61
+
+# BME680 coefficients related defines
+COEFF_SIZE = 41
+COEFF_ADDR1_LEN = 25
+COEFF_ADDR2_LEN = 16
+
 # BME680 field_x related defines
 FIELD_LENGTH = 15
 FIELD_ADDR_OFFSET = 17

@@ -3,7 +3,6 @@ import math
 import time
 
 __version__ = '1.0.2'
-I2C_ADDR_PRIMARY = 0x76
 
 class BME680(BME680Data):
     """BOSCH BME680
@@ -11,7 +10,7 @@ class BME680(BME680Data):
     :param i2c_addr: One of I2C_ADDR_PRIMARY (0x76) or I2C_ADDR_SECONDARY (0x77)
     :param i2c_device: Optional smbus or compatible instance for facilitating i2c communications.
     """
-    def __init__(self, i2c_addr=I2C_ADDR_PRIMARY, i2c_device=None):
+    def __init__(self, i2c_addr=I2C_ADDR_SECONDARY, i2c_device=None):
         BME680Data.__init__(self)
 
         self.i2c_addr = i2c_addr
@@ -323,6 +322,9 @@ class BME680(BME680Data):
         var3 = ((lookupTable2[gas_range] * var1) >> 9)
         calc_gas_res = ((var3 + (var2 >> 1)) / var2)
 
+        if calc_gas_res < 0:
+            calc_gas_res = (1<<32) + calc_gas_res
+        
         return calc_gas_res
 
     def _calc_heater_resistance(self, temperature):
